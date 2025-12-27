@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Music Player</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:Arial, sans-serif;
+}
+
+body{
+  height:100vh;
+  background:black;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+}
+
+.app{
+  width:360px;
+  height:720px;
+  background:linear-gradient(180deg,#1f2933,#000);
+  color:white;
+  border-radius:25px;
+  padding:20px;
+  display:flex;
+  flex-direction:column;
+  justify-content:space-between;
+}
+
+header{
+  text-align:center;
+}
+
+.tabs{
+  display:flex;
+  justify-content:center;
+  gap:20px;
+  margin-top:10px;
+}
+
+.tabs span{
+  opacity:0.5;
+  padding-bottom:4px;
+}
+
+.tabs .active{
+  opacity:1;
+  border-bottom:2px solid #22c55e;
+}
+
+.disc{
+  display:flex;
+  justify-content:center;
+}
+
+.disc img{
+  width:220px;
+  height:220px;
+  border-radius:50%;
+  animation:spin 10s linear infinite;
+}
+
+.song{
+  text-align:center;
+}
+
+.song p{
+  color:#aaa;
+  font-size:14px;
+}
+
+.time{
+  display:flex;
+  justify-content:space-between;
+  font-size:12px;
+  color:#aaa;
+}
+
+.progress{
+  height:5px;
+  background:#333;
+  border-radius:10px;
+}
+
+.bar{
+  width:45%;
+  height:100%;
+  background:#22c55e;
+  border-radius:10px;
+  animation:progressMove 6s infinite;
+}
+
+.controls{
+  display:flex;
+  justify-content:center;
+  gap:40px;
+  font-size:26px;
+}
+
+.play{
+  width:60px;
+  height:60px;
+  background:#22c55e;
+  color:black;
+  border-radius:50%;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  box-shadow:0 0 20px #22c55e;
+}
+
+.volume{
+  display:flex;
+  align-items:center;
+  gap:10px;
+}
+
+.vol-bar{
+  flex:1;
+  height:4px;
+  background:#333;
+  border-radius:10px;
+}
+
+.vol-fill{
+  width:60%;
+  height:100%;
+  background:#22c55e;
+  border-radius:10px;
+}
+
+.playlist h4{
+  margin-bottom:10px;
+}
+
+.cards{
+  display:flex;
+  gap:10px;
+}
+
+.card{
+  background:#111;
+  border-radius:10px;
+  padding:8px;
+  width:100px;
+  text-align:center;
+  font-size:12px;
+  transition:transform 0.3s;
+}
+
+.card:hover{
+  transform:scale(1.05);
+}
+
+.card img{
+  width:100%;
+  border-radius:8px;
+}
+
+nav{
+  display:flex;
+  justify-content:space-around;
+  font-size:20px;
+}
+
+nav .active{
+  color:#22c55e;
+}
+
+@keyframes spin{
+  from{transform:rotate(0deg);}
+  to{transform:rotate(360deg);}
+}
+
+@keyframes progressMove{
+  0%{width:10%;}
+  100%{width:80%;}
+}
+</style>
+</head>
+
+<body>
+
+<div class="app">
+
+<header>
+  <h3>Music Player</h3>
+  <div class="tabs">
+    <span>Queue</span>
+    <span class="active">Song</span>
+    <span>Lyrics</span>
+  </div>
+</header>
+
+<div class="disc">
+  <img src="cover.jpg">
+</div>
+
+<div class="song">
+  <h2>You & Me</h2>
+  <p>Disclosure</p>
+</div>
+
+<div class="time">
+  <span>1:08</span>
+  <span>3:35</span>
+</div>
+
+<div class="progress">
+  <div class="bar"></div>
+</div>
+
+<div class="controls">
+  <span>⏮</span>
+  <span class="play">▶</span>
+  <span>⏭</span>
+</div>
+
+<div class="volume">
+  <span>🔊</span>
+  <div class="vol-bar">
+    <div class="vol-fill"></div>
+  </div>
+</div>
+
+<section class="playlist">
+  <h4>Recommended</h4>
+  <div class="cards">
+    <div class="card">
+      <img src="cover.jpg">
+      <p>Dreaming Away</p>
+    </div>
+    <div class="card">
+      <img src="cover.jpg">
+      <p>Lights On</p>
+    </div>
+    <div class="card">
+      <img src="cover.jpg">
+      <p>You & Me</p>
+    </div>
+  </div>
+</section>
+
+<nav>
+  <span>🏠</span>
+  <span>🔍</span>
+  <span class="active">🎵</span>
+  <span>👤</span>
+</nav>
+
+</div>
+
+</body>
+</html>
